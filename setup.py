@@ -8,7 +8,7 @@ setup(
   author = 'Itai Guli',
   author_email = 'app.redalert@gmail.com',
   url = 'https://github.com/user/itaiguli',
-  download_url = 'https://github.com/user/reponame/archive/v_01.tar.gz',
+  download_url = 'https://github.com/itaiguli/guli/archive/v_01.tar.gz',
   keywords = ['GuliVariable', 'guli', 'multiprocessing'],
   install_requires=[],
   classifiers=[
