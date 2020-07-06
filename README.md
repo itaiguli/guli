@@ -37,7 +37,7 @@ print(string) # returns empty string ""
 
 def my_function():
   ''' change the value from another process '''
-  guli.GuliVariable("hello").setValue(4)
+  guli.GuliVariable("hello").setValue("success!!!")
 
 multiprocessing.Process(target=my_function).start()
 
