@@ -15,12 +15,21 @@ class __global__:
   
   def get(self):
     ''' function to get the variable value '''
-    _global_list_ = json.loads(open(folder,"r").read())
-    if self.name in _global_list_: # check if exists in json
-      return _global_list_[self.name] # return variable value
-    else:
-      return "" # return empty string
-
+    try:
+      with open(folder, "r") as f:
+        j = f.read()
+        if j:
+          _global_list_ = json.loads(j)
+          if self.name in _global_list_: # check if exists in json
+            return _global_list_[self.name] # return variable value
+          else:
+            return "" # return empty string
+        else:
+          return "" # if we could not read
+              
+    except IOError:
+      return "" # return empty string if we could not open the file
+        
   def setValue(self, value):
     ''' function to set the variable value '''
     _global_list_ = json.loads(open(folder,"r").read())
