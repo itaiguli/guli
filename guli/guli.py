@@ -6,13 +6,18 @@ folder = os.path.dirname(os.path.realpath(__file__))+"/data.json"
 if (exists(folder) == False):
   open(folder,"w").write("{}")
 
+def reset():
+  ''' function to reset all values to defaults '''
+  open(folder,"w").write("{}")
+  return 1
+
 def GuliVariable(variable_name):
   return __global__(variable_name)
-
+    
 class __global__:
   def __init__(self, name):
     self.name = name
-  
+          
   def get(self):
     ''' function to get the variable value '''
     try:
