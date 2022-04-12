@@ -1,7 +1,10 @@
 import json
 import os
+from os.path import exists
+
 folder = os.path.dirname(os.path.realpath(__file__))+"/data.json"
-open(folder,"w").write("{}")
+if (exists(folder) == False):
+  open(folder,"w").write("{}")
 
 def GuliVariable(variable_name):
   return __global__(variable_name)
